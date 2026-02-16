@@ -1,0 +1,39 @@
+[project]
+name = "pi-gateway-auth-service"
+version = "0.1.0"
+description = "Production-minded API Gateway + Auth Service with JWT, roles, rate limiting, and audit logs"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi==0.115.7",
+  "uvicorn[standard]==0.34.0",
+  "sqlalchemy==2.0.38",
+  "psycopg[binary]==3.2.13",
+  "redis==5.2.1",
+  "pyjwt==2.10.1",
+  "passlib==1.7.4",
+  "python-multipart==0.0.20",
+  "httpx==0.28.1",
+  "pydantic-settings==2.7.1",
+  "email-validator==2.2.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==8.3.4",
+  "pytest-asyncio==0.25.2"
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "services/auth_service",
+  "services/gateway"
+]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["services*"]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
