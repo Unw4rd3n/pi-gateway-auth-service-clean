@@ -1,0 +1,36 @@
+<svg width="1200" height="320" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Terminal demo">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#0a1629"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="320" rx="14" fill="url(#bg)"/>
+  <rect x="18" y="18" width="1164" height="284" rx="10" fill="#050b16" stroke="#1f2a3a"/>
+
+  <circle cx="45" cy="38" r="7" fill="#ef4444"/>
+  <circle cx="67" cy="38" r="7" fill="#f59e0b"/>
+  <circle cx="89" cy="38" r="7" fill="#22c55e"/>
+  <text x="112" y="43" fill="#8ea8c8" font-size="14" font-family="monospace">pi-gateway-auth-service-clean :: live demo</text>
+
+  <g font-family="monospace" font-size="18">
+    <text x="38" y="82" fill="#39ff14">$ curl -X POST /api/auth/register</text>
+    <text x="38" y="108" fill="#9fb8d8">{ "email":"user@example.com", "password":"StrongPass123" }</text>
+    <text x="38" y="136" fill="#22d3ee">[201] user created</text>
+
+    <text x="38" y="170" fill="#39ff14">$ curl -X POST /api/auth/login</text>
+    <text x="38" y="196" fill="#9fb8d8">{ "email":"user@example.com", "password":"StrongPass123" }</text>
+    <text x="38" y="224" fill="#22d3ee">[200] access_token + refresh_token issued</text>
+
+    <text x="38" y="258" fill="#39ff14">$ curl -H "Authorization: Bearer ***" /api/auth/me</text>
+    <text x="38" y="284" fill="#22d3ee">[200] role=user, gateway policy check passed</text>
+  </g>
+
+  <rect x="38" y="292" width="9" height="16" fill="#39ff14">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <rect x="32" y="64" width="1128" height="2" fill="#1f2a3a"/>
+  <rect x="32" y="302" width="1128" height="2" fill="#1f2a3a"/>
+</svg>

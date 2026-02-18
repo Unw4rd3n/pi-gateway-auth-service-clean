@@ -31,6 +31,26 @@ flowchart LR
   A --> R[(Redis)]
 ```
 
+## Demo
+
+<img src="./assets/terminal-demo.svg" alt="Terminal demo flow" width="100%" />
+
+```bash
+# 1) register
+curl -X POST http://localhost:8080/api/auth/register \
+  -H 'content-type: application/json' \
+  -d '{"email":"user@example.com","password":"StrongPass123"}'
+
+# 2) login
+curl -X POST http://localhost:8080/api/auth/login \
+  -H 'content-type: application/json' \
+  -d '{"email":"user@example.com","password":"StrongPass123"}'
+
+# 3) me (with access token)
+curl -X GET http://localhost:8080/api/auth/me \
+  -H "Authorization: Bearer <ACCESS_TOKEN>"
+```
+
 ## Сервисы и маршруты
 
 - `auth_service`
